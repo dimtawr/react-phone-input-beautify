@@ -1,3 +1,10 @@
+# [1.1.0-beta.5](https://github.com/iPagar/react-phone-input-beautify/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2025-10-22)
+
+
+### Bug Fixes
+
+* modify deps and vite config ([237d790](https://github.com/iPagar/react-phone-input-beautify/commit/237d7900583d7c98e1e1346af446916ff2128d7b))
+
 # [1.1.0-beta.4](https://github.com/iPagar/react-phone-input-beautify/compare/v1.1.0-beta.3...v1.1.0-beta.4) (2025-10-22)
 
 
