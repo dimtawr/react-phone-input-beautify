@@ -88,7 +88,11 @@
   },
   "peerDependencies": {
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "react-hook-form": ">=7"
+  },
+  "peerDependenciesMeta": {
+    "react-hook-form": { "optional": true }
   },
   "sideEffects": [
     "**/*.scss"
