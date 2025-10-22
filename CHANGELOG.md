@@ -1,3 +1,10 @@
+# [1.1.0-beta.4](https://github.com/iPagar/react-phone-input-beautify/compare/v1.1.0-beta.3...v1.1.0-beta.4) (2025-10-22)
+
+
+### Bug Fixes
+
+* remove vite-plugin-css-injected-by-js deps ([6b18603](https://github.com/iPagar/react-phone-input-beautify/commit/6b18603cc32fbc3c373d57c89aad417216a8e7ae))
+
 # [1.1.0-beta.3](https://github.com/iPagar/react-phone-input-beautify/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2025-10-22)
 
 
