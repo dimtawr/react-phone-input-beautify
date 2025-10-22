@@ -1,3 +1,10 @@
+# [1.1.0-beta.3](https://github.com/iPagar/react-phone-input-beautify/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2025-10-22)
+
+
+### Bug Fixes
+
+* add lint rules for max-len ([a8dc173](https://github.com/iPagar/react-phone-input-beautify/commit/a8dc17305b94cda702fbdbe94b52f0fdf8909fd7))
+
 # [1.1.0-beta.2](https://github.com/iPagar/react-phone-input-beautify/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2025-10-22)
 
 
