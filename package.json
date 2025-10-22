@@ -87,6 +87,11 @@
     "vite-plugin-css-injected-by-js": "^3.3.1",
     "vite-plugin-dts": "^3.7.2"
   },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "sideEffects": ["**/*.scss"],
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",

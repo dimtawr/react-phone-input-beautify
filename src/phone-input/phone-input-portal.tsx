@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useLayoutEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -5,18 +7,10 @@ import { useWindowSize } from '../use-window-size';
 import styles from './phone-input.module.scss';
 import { usePhoneInput } from './phone-input-provider';
 
-function PhoneInputPortal({
-  children,
-  className,
-}: {
-  children?: React.ReactNode;
-  className?: string;
-}) {
+function PhoneInputPortal({ children, className }: { children?: React.ReactNode; className?: string }) {
   const { phoneInputRef, setIsPortal } = usePhoneInput();
   // Используем состояние для управления созданием элемента портала
-  const [portalElement, setPortalElement] = useState<HTMLDivElement | null>(
-    null
-  );
+  const [portalElement, setPortalElement] = useState<HTMLDivElement | null>(null);
   const size = useWindowSize();
 
   useEffect(() => {

@@ -1,17 +1,12 @@
+'use client';
+
 import { ISO31661AssignedEntry } from 'iso-3166';
 import React, { HTMLAttributes, useEffect, useMemo, useState } from 'react';
 
 import { usePhoneState } from '../lib';
 import { PhoneInputDialog, usePhoneInputDialog } from './phone-input-dialog';
-import {
-  PhoneInputItem,
-  PhoneInputItemWithForm,
-  usePhoneInputItem,
-} from './phone-input-item';
-import PhoneInputWithForm, {
-  PhoneInputNumberInput,
-  usePhoneInputNumberInput,
-} from './phone-input-number-input';
+import { PhoneInputItem, PhoneInputItemWithForm, usePhoneInputItem } from './phone-input-item';
+import PhoneInputWithForm, { PhoneInputNumberInput, usePhoneInputNumberInput } from './phone-input-number-input';
 import PhoneInputPortal from './phone-input-portal';
 import { PhoneInputContextProvider } from './phone-input-provider';
 import { PhoneInputTrigger, usePhoneInputTrigger } from './phone-input-trigger';
@@ -21,7 +16,7 @@ export function usePhone(
   props: {
     isDialogOpen: boolean;
   },
-  state: ReturnType<typeof usePhoneState>
+  state: ReturnType<typeof usePhoneState>,
 ) {
   const { numberInputProps } = usePhoneInputNumberInput();
   const { getListItemProps } = usePhoneInputItem({
@@ -58,21 +53,11 @@ export function PhoneInputRoot(
     onPhoneChange?: (phone: string) => void;
     onValidationChange?: (valid: boolean) => void;
   } & UsePhoneStateParams & {
-      children?:
-        | (ChildrenFunc | React.ReactNode)[]
-        | ChildrenFunc
-        | React.ReactNode;
-    }
+      children?: (ChildrenFunc | React.ReactNode)[] | ChildrenFunc | React.ReactNode;
+    },
 ) {
-  const {
-    children,
-    initialCountry,
-    initialPhoneNumber,
-    onCountryChange,
-    onPhoneChange,
-    onValidationChange,
-    ...rest
-  } = props;
+  const { children, initialCountry, initialPhoneNumber, onCountryChange, onPhoneChange, onValidationChange, ...rest } =
+    props;
   const state = usePhoneState({
     initialCountry,
     initialPhoneNumber,
@@ -94,7 +79,7 @@ export function PhoneInputRoot(
       setIsDialogOpen: setIsOpen,
       setOnOpenChange,
     }),
-    [isOpen, onOpenChange]
+    [isOpen, onOpenChange],
   );
 
   useEffect(() => {
@@ -116,10 +101,7 @@ export function PhoneInputRoot(
   }, [onPhoneChange, state.phoneNumber]);
 
   // Функция для обработки children
-  const processChildren = (
-    child: ChildrenFunc | React.ReactNode,
-    key?: number
-  ) => {
+  const processChildren = (child: ChildrenFunc | React.ReactNode, key?: number) => {
     if (typeof child === 'function') {
       const redactored = child({
         country: state.country,
@@ -141,11 +123,7 @@ export function PhoneInputRoot(
     : processChildren(children);
 
   return (
-    <PhoneInputContextProvider
-      dialog={dialogState}
-      props={phoneProps}
-      state={state}
-    >
+    <PhoneInputContextProvider dialog={dialogState} props={phoneProps} state={state}>
       <PhoneInputWrapper {...rest}>{renderedChildren}</PhoneInputWrapper>
     </PhoneInputContextProvider>
   );

@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import React, { useEffect, useRef } from 'react';
 
@@ -10,7 +12,7 @@ export function PhoneInputDialog(
     children?: React.ReactNode;
     onOpenChange?: (open: boolean) => void;
     open?: boolean;
-  }
+  },
 ) {
   const { children, className, onOpenChange, open, ...otherProps } = props;
   const {
@@ -46,7 +48,7 @@ export function PhoneInputDialog(
         styles.phoneInputDialog,
         className,
         dialogOpen && styles.phoneInputDialogOpen,
-        isPortal && styles.phoneInputDialogPortal
+        isPortal && styles.phoneInputDialogPortal,
       )}
       ref={dialogRef}
       style={{ top: dialogPosition.top }}

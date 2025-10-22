@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import { CountryCode, getCountryCallingCode } from 'libphonenumber-js';
 import React, { useCallback } from 'react';
@@ -9,7 +11,7 @@ import { usePhoneInput } from './phone-input-provider';
 export function PhoneInputItem(
   props: React.LiHTMLAttributes<HTMLLIElement> & {
     country: string;
-  }
+  },
 ) {
   const { children, className, country, onClick, onKeyDown } = props;
   const {
@@ -57,7 +59,7 @@ export function PhoneInputItem(
 export function PhoneInputItemWithForm(
   props: React.LiHTMLAttributes<HTMLLIElement> & {
     country: string;
-  } & UseControllerProps
+  } & UseControllerProps,
 ) {
   const { country, name } = props;
   const {
@@ -97,7 +99,7 @@ export function usePhoneInputItem(props: UsePhoneInputItemProps) {
         'aria-selected': selected === itemProps.value,
         role: 'option' as const,
       }),
-      [selected]
+      [selected],
     ),
   };
 }

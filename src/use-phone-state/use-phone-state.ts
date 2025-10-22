@@ -1,3 +1,5 @@
+'use client';
+
 import { iso31661 } from 'iso-3166';
 import {
   AsYouType,
@@ -14,7 +16,7 @@ export const phoneValidationSchema = (
   { invalid, required } = {
     invalid: 'Invalid phone number',
     required: 'Phone number is required',
-  }
+  },
 ) =>
   z
     .string({
@@ -58,20 +60,11 @@ export function formatPhoneNumber(phoneNumber: string, country?: string) {
  * @param initialCountry Initial country code (ISO 3166-1 alpha-2).
  * @param initialPhoneNumber Initial phone number as a string.
  */
-export const usePhoneState = ({
-  initialCountry = 'US',
-  initialPhoneNumber = '',
-} = {}) => {
+export const usePhoneState = ({ initialCountry = 'US', initialPhoneNumber = '' } = {}) => {
   const [country, setCountry] = useState(initialCountry);
-  const initialCountryCode = getCountryCallingCode(
-    initialCountry as CountryCode
-  );
-  const [phoneNumber, setPhoneNumber] = useState(() =>
-    formatPhoneNumber(initialPhoneNumber, initialCountry)
-  );
-  const [isValid, setIsValid] = useState(
-    () => phoneValidationSchema().safeParse(initialPhoneNumber).success
-  );
+  const initialCountryCode = getCountryCallingCode(initialCountry as CountryCode);
+  const [phoneNumber, setPhoneNumber] = useState(() => formatPhoneNumber(initialPhoneNumber, initialCountry));
+  const [isValid, setIsValid] = useState(() => phoneValidationSchema().safeParse(initialPhoneNumber).success);
 
   // Resets the phone number to initial conditions
   const resetPhoneNumber = () => {
