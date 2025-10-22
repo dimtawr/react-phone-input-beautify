@@ -1,3 +1,10 @@
+# [1.1.0-beta.2](https://github.com/iPagar/react-phone-input-beautify/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2025-10-22)
+
+
+### Bug Fixes
+
+* add next.js prefix, add lint rules, add prettier rules, add peerDependencies and sideEffects ([41c412b](https://github.com/iPagar/react-phone-input-beautify/commit/41c412b5071bb525627d63e1a27b70595008ecf4))
+
 # [1.1.0-beta.1](https://github.com/iPagar/react-phone-input-beautify/compare/v1.0.12...v1.1.0-beta.1) (2024-09-17)
 
 
