@@ -12,7 +12,7 @@ export declare function formatPhoneNumber(phoneNumber: string, country?: string)
  * @param initialCountry Initial country code (ISO 3166-1 alpha-2).
  * @param initialPhoneNumber Initial phone number as a string.
  */
-export declare const usePhoneState: ({ initialCountry, initialPhoneNumber, }?: {
+export declare const usePhoneState: ({ initialCountry, initialPhoneNumber }?: {
     initialCountry?: string | undefined;
     initialPhoneNumber?: string | undefined;
 }) => {
