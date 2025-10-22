@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import React, { useLayoutEffect } from 'react';
 
@@ -5,13 +7,7 @@ import styles from './phone-input.module.scss';
 import { usePhoneInput } from './phone-input-provider';
 
 export function PhoneInputWrapper(props: React.HTMLAttributes<HTMLDivElement>) {
-  const {
-    isDialogOpen,
-    isPortal,
-    phoneInputRef,
-    setDialogPosition,
-    setPhoneInputRef,
-  } = usePhoneInput();
+  const { isDialogOpen, isPortal, phoneInputRef, setDialogPosition, setPhoneInputRef } = usePhoneInput();
   const { className, style } = props;
 
   useLayoutEffect(() => {

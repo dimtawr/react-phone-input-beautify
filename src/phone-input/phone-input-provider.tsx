@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useMemo, useState } from 'react';
 
 import { usePhoneState } from '../use-phone-state/use-phone-state';
@@ -7,9 +9,7 @@ const PhoneInputContext = React.createContext({});
 export function usePhoneInput() {
   const context = React.useContext(PhoneInputContext);
   if (!context) {
-    throw new Error(
-      'PhoneInput compound components cannot be rendered outside the PhoneInput component'
-    );
+    throw new Error('PhoneInput compound components cannot be rendered outside the PhoneInput component');
   }
   return context as {
     dialogPosition?: { top: number };
@@ -22,12 +22,8 @@ export function usePhoneInput() {
     setIsDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
     setIsPortal: React.Dispatch<React.SetStateAction<boolean>>;
     setOnOpenChange?: React.Dispatch<Function>;
-    setPhoneInputRef: React.Dispatch<
-      React.SetStateAction<React.RefObject<HTMLDivElement>>
-    >;
-    setTriggerRef: React.Dispatch<
-      React.SetStateAction<React.RefObject<HTMLButtonElement>>
-    >;
+    setPhoneInputRef: React.Dispatch<React.SetStateAction<React.RefObject<HTMLDivElement>>>;
+    setTriggerRef: React.Dispatch<React.SetStateAction<React.RefObject<HTMLButtonElement>>>;
     state: ReturnType<typeof usePhoneState>;
     triggerRef?: React.RefObject<HTMLButtonElement>;
   };
@@ -48,15 +44,12 @@ export function PhoneInputContextProvider({
   props: ReturnType<typeof usePhone>;
   state: ReturnType<typeof usePhoneState>;
 }) {
-  const [phoneInputRef, setPhoneInputRef] =
-    useState<React.RefObject<HTMLButtonElement> | null>(null);
+  const [phoneInputRef, setPhoneInputRef] = useState<React.RefObject<HTMLButtonElement> | null>(null);
   const [dialogPosition, setDialogPosition] = useState<{
     top: number;
   }>();
-  const [triggerRef, setTriggerRef] =
-    useState<React.RefObject<HTMLButtonElement> | null>(null);
-  const { isDialogOpen, onOpenChange, setIsDialogOpen, setOnOpenChange } =
-    dialog;
+  const [triggerRef, setTriggerRef] = useState<React.RefObject<HTMLButtonElement> | null>(null);
+  const { isDialogOpen, onOpenChange, setIsDialogOpen, setOnOpenChange } = dialog;
   const [isPortal, setIsPortal] = useState(false);
 
   const contextValue = useMemo(
@@ -76,21 +69,8 @@ export function PhoneInputContextProvider({
       state,
       triggerRef,
     }),
-    [
-      phoneInputRef,
-      dialogPosition,
-      props,
-      state,
-      triggerRef,
-      isDialogOpen,
-      onOpenChange,
-      isPortal,
-    ]
+    [phoneInputRef, dialogPosition, props, state, triggerRef, isDialogOpen, onOpenChange, isPortal],
   );
 
-  return (
-    <PhoneInputContext.Provider value={contextValue}>
-      {children}
-    </PhoneInputContext.Provider>
-  );
+  return <PhoneInputContext.Provider value={contextValue}>{children}</PhoneInputContext.Provider>;
 }
