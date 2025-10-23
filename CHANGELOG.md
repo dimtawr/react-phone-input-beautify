@@ -1,3 +1,18 @@
+# [1.1.0](https://github.com/iPagar/react-phone-input-beautify/compare/v1.0.12...v1.1.0) (2025-10-23)
+
+
+### Bug Fixes
+
+* add lint rules for max-len ([a8dc173](https://github.com/iPagar/react-phone-input-beautify/commit/a8dc17305b94cda702fbdbe94b52f0fdf8909fd7))
+* add next.js prefix, add lint rules, add prettier rules, add peerDependencies and sideEffects ([41c412b](https://github.com/iPagar/react-phone-input-beautify/commit/41c412b5071bb525627d63e1a27b70595008ecf4))
+* modify deps and vite config ([237d790](https://github.com/iPagar/react-phone-input-beautify/commit/237d7900583d7c98e1e1346af446916ff2128d7b))
+* remove vite-plugin-css-injected-by-js deps ([6b18603](https://github.com/iPagar/react-phone-input-beautify/commit/6b18603cc32fbc3c373d57c89aad417216a8e7ae))
+
+
+### Features
+
+* **input:** improve phone input cursor handling and add tests ([3634e77](https://github.com/iPagar/react-phone-input-beautify/commit/3634e77103620da05af02fb44413d71b20da24c2))
+
 # [1.1.0-beta.5](https://github.com/iPagar/react-phone-input-beautify/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2025-10-22)
 
 
